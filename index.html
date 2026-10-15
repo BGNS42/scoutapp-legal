@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte ScoutApp</title>
+    <style>
+        /* Variáveis com a Paleta de Cores */
+        :root {
+            --midnight-purple: #0F032D;
+            --purple-heart: #4E2BCC;
+            --lavender-indigo: #905BF4;
+            --seashell: #EFEFEF;
+        }
+
+        /* Reset básico de layout */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Fundo principal da tela centralizando o conteúdo */
+        body {
+            background-color: var(--midnight-purple);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: var(--midnight-purple);
+        }
+
+        /* Container do formulário (o cartão central) */
+        .form-container {
+            background-color: var(--seashell);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: var(--purple-heart);
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            background-color: #fff;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Destaca a borda de Lavanda quando o usuário clica no campo */
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--lavender-indigo);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Botão de Envio principal */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--purple-heart);
+            color: var(--seashell);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--lavender-indigo);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Suporte ScoutApp</h2>
+        <!-- O formulário aponta para o e-mail via mailto -->
+        <form action="mailto:scoutapp.dev@gmail.com" method="POST" enctype="text/plain">
+            
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="Nome" required placeholder="Digite seu nome">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">E-mail de contato</label>
+                <input type="email" id="email" name="E-mail" required placeholder="Digite seu e-mail">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="Mensagem" required placeholder="Como podemos ajudar?"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Enviar Mensagem</button>
+        </form>
+    </div>
+
+</body>
+</html>
